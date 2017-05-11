@@ -61,9 +61,24 @@ describe("A Thermostat", function(){
   });
 
   it('resets temperature to 20', function() {
-    thermostat.up()
+    thermostat.up();
     thermostat.resetTemp();
     expect(thermostat.temperature).toEqual(20);
-  })
+  });
+});
 
+  describe("displays energy usage", function() {
+
+    var thermostat;
+
+    beforeEach(function(){
+      thermostat = new Thermostat();
+    });
+
+    it('sees the low energy usage', function() {
+      for (i = 0; i < 5; i++) {
+      thermostat.down();
+      }
+    expect(thermostat.energyUsage()).toEqual('low-usage');
+  });
 });

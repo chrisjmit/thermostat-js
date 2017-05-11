@@ -44,3 +44,7 @@ Thermostat.prototype.isMaxTemperature = function () {
 Thermostat.prototype.resetTemp = function () {
   this.temperature = 20;
 };
+
+Thermostat.prototype.energyUsage = function () {
+  return 'low-usage';
+};
