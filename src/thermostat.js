@@ -21,3 +21,7 @@ Thermostat.prototype.down = function() {
   }
   return this.temperature -= 1 ;
 };
+
+Thermostat.prototype.powerSavingOff = function () {
+  this.powerSaving = false;
+};

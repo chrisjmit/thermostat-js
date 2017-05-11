@@ -41,4 +41,9 @@ describe("A Thermostat", function(){
     expect(thermostat.powerSaving).toBe(true);
   });
 
+  it('can turn off powersaving mode', function() {
+    thermostat.powerSavingOff();
+    expect(thermostat.powerSaving).toBe(false);
+  });
+
 });
