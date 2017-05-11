@@ -1,3 +1,5 @@
+// 'use strict'
+
 describe("A Thermostat", function(){
 
   var thermostat;
@@ -33,6 +35,10 @@ describe("A Thermostat", function(){
       thermostat.up();
     }
     expect(thermostat.temperature).toEqual(32);
+  });
+
+  it('has a power-saving button', function() {
+    expect(thermostat.powerSaving).toBe(true);
   });
 
 });
