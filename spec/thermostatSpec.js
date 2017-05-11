@@ -60,4 +60,10 @@ describe("A Thermostat", function(){
     expect(thermostat.temperature).toEqual(25);
   });
 
+  it('resets temperature to 20', function() {
+    thermostat.up()
+    thermostat.resetTemp();
+    expect(thermostat.temperature).toEqual(20);
+  })
+
 });

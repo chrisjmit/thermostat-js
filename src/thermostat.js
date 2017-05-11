@@ -40,3 +40,7 @@ Thermostat.prototype.isMaxTemperature = function () {
   }
   return this.temperature === this.maxTemperature;
 };
+
+Thermostat.prototype.resetTemp = function () {
+  this.temperature = 20;
+};
