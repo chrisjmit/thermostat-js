@@ -28,4 +28,11 @@ describe("A Thermostat", function(){
     expect(thermostat.temperature).toEqual(10);
   });
 
+  it('finds a maximum temperature of 32', function() {
+    for (var i = 20; i < 33; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.temperature).toEqual(32);
+  });
+
 });
