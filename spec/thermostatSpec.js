@@ -76,12 +76,15 @@ describe("A Thermostat", function(){
       expect(thermostat.energyUsage()).toEqual('low-usage');
     });
 
-
     it('medium energy usage', function() {
       expect(thermostat.energyUsage()).toEqual('medium-usage');
     });
-
-
+    it('displays high energy usage', function() {
+      for (i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.energyUsage()).toEqual('high-usage');
+    });
   });
 
 
