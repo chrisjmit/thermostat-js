@@ -65,20 +65,29 @@ describe("A Thermostat", function(){
     thermostat.resetTemp();
     expect(thermostat.temperature).toEqual(20);
   });
-});
 
-  describe("displays energy usage", function() {
 
-    var thermostat;
+  describe("displays", function() {
 
-    beforeEach(function(){
-      thermostat = new Thermostat();
+    it('low energy usage', function() {
+      for (i = 0; i < 5; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.energyUsage()).toEqual('low-usage');
     });
 
-    it('sees the low energy usage', function() {
-      for (i = 0; i < 5; i++) {
-      thermostat.down();
-      }
-    expect(thermostat.energyUsage()).toEqual('low-usage');
+
+    it('medium energy usage', function() {
+      expect(thermostat.energyUsage()).toEqual('medium-usage');
+    });
+
+
   });
+
+
+
+
+
+
+
 });
