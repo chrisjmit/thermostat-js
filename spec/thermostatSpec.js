@@ -1,6 +1,11 @@
 describe("A Thermostat", function(){
 
-  var thermostat = new Thermostat();
+  var thermostat;
+
+  beforeEach(function(){
+    thermostat = new Thermostat();
+  });
+
 
   it('has a default temperature', function() {
     expect(thermostat.temperature).toEqual(20);
@@ -9,6 +14,18 @@ describe("A Thermostat", function(){
   it('can be turned up', function() {
     thermostat.up();
     expect(thermostat.temperature).toEqual(21);
+  });
+
+  it('can be turned down', function() {
+    thermostat.down();
+    expect(thermostat.temperature).toEqual(19);
+  });
+
+  it('has a minimum temperature of 10', function() {
+    for (var i = 0; i < 11; i++){
+    thermostat.down();
+  }
+    expect(thermostat.temperature).toEqual(10);
   });
 
 });
