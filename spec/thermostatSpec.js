@@ -31,6 +31,7 @@ describe("A Thermostat", function(){
   });
 
   it('finds a maximum temperature of 32', function() {
+    thermostat.powerSavingOff();
     for (var i = 20; i < 33; i++) {
       thermostat.up();
     }
@@ -44,12 +45,19 @@ describe("A Thermostat", function(){
   it('can turn off powersaving mode', function() {
     thermostat.powerSavingOff();
     expect(thermostat.powerSaving).toBe(false);
-  }); 
+  });
 
-  it('can turn off powersaving mode', function() {
+  it('can turn on powersaving mode', function() {
     thermostat.powerSavingOff();
     thermostat.powerSavingOn();
     expect(thermostat.powerSaving).toBe(true);
+  });
+
+  it('finds a max temp of 25C when in PSM', function() {
+    for (i = 20; i < 26; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.temperature).toEqual(25);
   });
 
 });
