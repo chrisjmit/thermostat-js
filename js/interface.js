@@ -38,7 +38,7 @@ $(document).ready(function() {
     $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=cedbfe32fd4e692f3f6a0229a2fb212a&units=metric', function(data) {
       $('#current-temperature').text(data.main.temp);
     });
-  });
+  }); 
 
 
 });
